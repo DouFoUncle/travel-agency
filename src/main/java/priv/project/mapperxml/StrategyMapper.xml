@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="priv.project.mapper.StrategyMapper">
+  <resultMap id="BaseResultMap" type="priv.project.pojo.Strategy">
+    <!--@mbg.generated-->
+    <!--@Table t_strategy-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="index_img" jdbcType="VARCHAR" property="indexImg" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="create_date" jdbcType="VARCHAR" property="createDate" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_type" jdbcType="VARCHAR" property="userType" />
+    <association property="user" javaType="priv.project.pojo.User">
+      <!--@mbg.generated-->
+      <!--@Table t_user-->
+      <id column="user_id" jdbcType="INTEGER" property="id" />
+      <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+      <result column="user_name" jdbcType="VARCHAR" property="userName" />
+      <result column="password" jdbcType="VARCHAR" property="password" />
+      <result column="age" jdbcType="INTEGER" property="age" />
+      <result column="sex" jdbcType="VARCHAR" property="sex" />
+      <result column="email" jdbcType="VARCHAR" property="email" />
+      <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+      <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+      <result column="birthday" jdbcType="DATE" property="birthday" />
+      <result column="tuCreateDate" jdbcType="TIMESTAMP" property="createDate" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, index_img, content, create_date, user_id, user_type
+  </sql>
+
+  <select id="getListByPage" resultMap="BaseResultMap">
+    SELECT ts.id, ts.title, ts.index_img, ts.content, ts.create_date, ts.user_id, ts.user_type,
+           tu.login_name, tu.user_name, tu.password, tu.age, tu.sex, tu.email,
+           tu.head_img, tu.id_card, tu.birthday, tu.create_date tuCreateDate
+    FROM t_strategy ts
+    INNER JOIN t_user tu on ts.user_id = tu.id
+    <where>
+      <if test="strategy != null and strategy.user != null">
+        <if test="strategy.user.userName != null and strategy.user.userName != ''">
+          AND tu.user_name LIKE CONCAT('%', #{strategy.user.userName}, '%')
+        </if>
+      </if>
+      <if test="strategy != null">
+        <if test="strategy.title != null and strategy.title != ''">
+          AND ts.title LIKE CONCAT('%', #{strategy.title}, '%')
+        </if>
+      </if>
+    </where>
+  </select>
+
+  <select id="getDataCount" resultType="long">
+    SELECT COUNT(1)
+    FROM t_comment tc
+    INNER JOIN t_user tu on tc.user_id = tu.id
+    INNER JOIN t_strategy ts on tc.strategy_id = ts.id
+    <where>
+      <if test="strategy != null and strategy.user != null">
+        <if test="strategy.user.userName != null and strategy.user.userName != ''">
+          AND tu.user_name LIKE CONCAT('%', #{strategy.user.userName}, '%')
+        </if>
+      </if>
+      <if test="strategy != null">
+        <if test="strategy.title != null and strategy.title != ''">
+          AND ts.title LIKE CONCAT('%', #{strategy.title}, '%')
+        </if>
+      </if>
+    </where>
+  </select>
+</mapper>

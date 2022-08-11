@@ -1,0 +1,236 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0}
+ul li{ list-style:none}
+img{ border:0; max-width:100%}
+a{ text-decoration:none; color:#333}
+.clear{ clear:both}
+body{ font-family:"微软雅黑"; width:100%; /*min-width:1200px;*/color: #333;font-size: 14px;}
+.ccsl{ display:block;overflow:hidden; white-space:nowrap;text-overflow:ellipsis;}
+/*p{text-align:justify}*/
+
+.main{ width:1200px; margin:0 auto;}
+
+
+.banner{ width:100%; min-width:1200px; /*height:400px;*/ overflow:hidden; position:relative;font-size:0; margin:0 auto;}
+.b-img{ /*height:400px;*/  position:absolute; left:0; top:0;}
+.b-img img{ display:block; /*height:400px;*/ float:left;}
+.b-list{ height:20px; /*padding-top:380px;*/ margin:0 auto;position:relative;z-index:1;}
+.b-list span{ display:block;cursor:pointer; width:10px; height:10px; border-radius:50%; background:#fff; float:left; margin:0 5px; _margin:0 3px;}
+.b-list .spcss{ background:#d8241d}
+
+
+.logo{ width:1200px; margin:0 auto; overflow:hidden}
+.logo img{ display:block; width:1200px;}
+
+
+.nav{ background:#246427;width:100%; min-width:1200px; height:50px;}
+.nav ul{ overflow:hidden; padding:0 15px}
+.nav ul li{ float:left; height:50px; line-height:50px; width:145px; overflow:hidden; margin-right:1px}
+.nav ul li a{ display:block; color:#fff; text-align:center;font-weight: 400;font-size: 16px;}
+.nav ul li:hover,.nav ul li.on{ background:#ffba00}
+
+
+.contitbox{ width:600px; margin:0 auto; height:72px; overflow:hidden; padding-bottom:58px}
+.contitbox h2{font-size: 30px;color: #246427;text-transform: uppercase;margin-bottom: 5px; font-weight:500;font-family: inherit;line-height: 1.1;text-align: center;}
+.contitbox p{margin: 0 0 10px;text-align: center;font-size: 24px;background: url(../images/line.png) no-repeat center;}
+
+.part1{ width:1200px; margin:0 auto; padding-top:58px; overflow:hidden}
+.part1 .typebox{ text-align:center;}
+.part1 .typebox a{ display:inline-block;padding-right: 15px;margin-right: 15px;border-right: 1px solid #333;font-size: 16px;color: #333;}
+.part1 .typebox a:hover{color: #ffae00;}
+.part1 ul{ padding-top:30px; overflow:hidden; padding-bottom:20px}
+.part1 ul li{ float:left;width:280px; padding: 4px;margin-bottom: 20px;background: #fff;border: 1px solid #ddd;border-radius: 4px; margin-right:13px}
+.part1 ul li .pro{display: block; width:280px;height: 188px;overflow: hidden;}
+.part1 ul li .pro img{width:280px;height: 188px;transition: all 1s;}
+.part1 ul li .pro img:hover{transform: scale(1.4)}
+.part1 ul li .txtbox{background: #eaeaea;padding: 9px; text-align:center;color: #333;}
+.part1 ul li .txtbox p{margin-bottom: 10px; text-align:center}
+.part1 ul li .txtbox img{ display:block; margin:0 auto}
+.part1 ul li:nth-child(4n){ margin-right:0}
+
+.part2{width:100%; min-width:1200px;background: #000 url(../images/bg.jpg) no-repeat center / cover;padding: 60px 0;margin-bottom: 58px;}
+.part2 .main{ width:1170px; height:332px; overflow:hidden; background:#fff;padding: 40px 15px; margin:0 auto}
+.part2_l{ float:left; height:310px; width:570px; padding:0 15px; overflow:hidden}
+.part2_l h2{font-size: 24px; font-weight:500;font-family: inherit;color: #227327;}
+.part2_l hr{width: 32px;border-top: 1px solid #227327;margin: 15px 0;}
+.part2_l .con{line-height: 24px; max-height:165px; overflow:hidden}
+.part2_l a.more{display: inline-block;width: 150px;height: 45px;line-height: 45px;text-align: center;color: #fff;background: #ffae00;margin-top: 40px;}
+
+.part2_r{ width:510px; height:280px; float:right; overflow:hidden}
+.part2_r img{ display:block;width:510px; height:280px;}
+
+
+.part3{ width:1200px; margin:0 auto}
+.part3 ul{ overflow:hidden}
+.part3 ul li{ float:left;margin-right: 35px; width:266px; overflow:hidden; margin-bottom:50px}
+.part3 ul li .pro{ width:266px; height:172px; overflow:hidden; background:#000}
+.part3 ul li .pro img{width:266px; height:172px; overflow:hidden}
+.part3 ul li .pro img:hover{opacity: .8;}
+.part3 ul li .txtcon{}
+.part3 ul li .txtcon a{color: #227327;font-size: 16px;text-align: center; margin: 20px 0 10px;}
+.part3 ul li .txtcon .sub{color: #666;line-height: 24px; height:72px; overflow:hidden}
+.part3 ul li:nth-child(4n){ margin-right:0}
+
+
+.part4{width:100%; min-width:1200px;min-height: 500px;background: url(../images/bg2.jpg) no-repeat center / cover;margin-bottom: 58px;}
+.part4 .titbox{padding: 48px 0;}
+.part4 .titbox h2{ text-align:center;color: #227327;font-size: 36px;}
+.part4 .titbox h2 span{color: #ffae00;display: inline-block;font-weight: 900;}
+
+.part4 ul{width: 1000px;min-height: 320px;margin: 100px auto 0;}
+.part4 ul li{width:170px;height: 220px;background: #00824a;color: #fff;padding: 25px;float: left;margin-right: 40px;}
+.part4 ul li h3{font-size: 24px;margin-bottom: 18px;}
+.part4 ul li .sub{font-size: 14px;line-height: 24px;text-align: justify; height:170px; overflow:hidden}
+.part4 ul li:nth-child(4n){ margin-right:0}
+.part4 ul li:hover{background: #ffae00;}
+.part4 ul li:nth-child(2){margin-top: -50px;}
+.part4 ul li:nth-child(3){margin-top: -50px;}
+
+
+.part5{ width:1200px; margin:0 auto; overflow:hidden}
+.part5 ul{ overflow:hidden}
+.part5 ul li{ float:left; width:570px; margin:0 15px; height:130px; margin-bottom:40px;}
+.part5 ul li .p5L{ float:left; width:200px; height:130px; overflow:hidden}
+.part5 ul li .p5L img{ display:block;width:200px; height:130px;}
+.part5 ul li .p5R{ float:right; width:330px; height:130px; overflow:hidden}
+.part5 ul li .p5R a{color: #333;font-size: 16px; font-weight:500;}
+.part5 ul li .p5R hr{width: 32px;border-top: 1px solid #227327;margin: 15px 0;}
+.part5 ul li .p5R .sub{color: #999;line-height: 24px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient: vertical;}
+.part5 ul li .p5R a:hover{color: #ffae00;}
+
+
+.part6{width:1200px; margin:0 auto; overflow:hidden; padding-top:30px}
+.part6_1{ width:570px; float:left; padding:0 15px; overflow:hidden}
+.part6_1 .p6one{margin-bottom: 35px;width: 133px;height: 38px;line-height: 38px;background: #256527;}
+.part6_1 .p6one p{text-align: center;color: #fff;}
+.part6_1 .p6two{ width:570px; height:120px; overflow:hidden}
+.part6_1 .p6two .p6_l{ float:left; width:168px; height:120px; overflow:hidden}
+.part6_1 .p6two .p6_l img{ display:block;width:168px; height:120px;}
+.part6_1 .p6two .p6_r{ float:right; width:370px; height:120px; overflow:hidden}
+.part6_1 .p6two .p6_r a{font-size: 16px;margin-bottom: 14px;color: #00824a;}
+.part6_1 .p6two .p6_r .sub{color: #666;line-height: 24px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient: vertical;}
+.part6_1 ul{margin-top:25px;margin-bottom: 10px; overflow:hidden}
+.part6_1 ul li{ height:45px; line-height:45px;border-bottom: 1px dashed #ddd;}
+.part6_1 ul li a{ float:left; color:#333; max-width:450px;}
+.part6_1 ul li span{ float:right}
+.part6_1 ul li a:hover{color: #ffae00;}
+
+
+
+.linkbox{ width:1170px; margin:0 auto; padding:45px 15px 20px;}
+.linkbox span{font-size: 16px; padding:5px}
+.linkbox .con{}
+.linkbox .con a{color: #337ab7; display:inline-block; padding:5px;font-size: 16px;}
+.linkbox .con a:hover{color: #23527c;}
+
+
+
+.footer{width:100%; min-width:1200px;padding:30px 0 50px;background: #256527;color: #f9f9f9;}
+.footer .ewm{ float:left; margin-left:15px; width:140px; height:140px; overflow:hidden; margin-top:20px;}
+.footer .footerR{ float:right; width:960px; overflow:hidden}
+.fnav{border-bottom: 1px solid #217e27; margin-bottom: 20px; height:60px; line-height:60px;width:960px; overflow:hidden}
+.fnav a{display: inline-block; color: #f9f9f9;;padding-right: 90px;background: url(../images/line2.png) no-repeat 100px center;}
+.fcon{color: #f9f9f9; font-size:14px; line-height:30px}
+
+.mabody{width:100%; min-width:1200px; background:#f9f9f9;}
+.mainWarp{ width:1170px; margin:0 auto; padding:30px 0}
+.mainLeft{ width:265px; overflow:hidden; float:left}
+.mainLeft .typebox{padding: 15px;background: #256527;color: #fff;}
+.mainLeft .typebox .titbox{ width:100%; height:84px; overflow:hidden}
+.mainLeft .typebox .titbox h3{font-size: 28px;font-family: inherit;font-weight: 500;line-height: 1.1; text-align:left}
+.mainLeft .typebox .titbox hr{border-top: 1px solid #fff;width: 32px;margin: 15px 0;}
+.mainLeft .typebox .titbox p{font-size: 16px;text-transform: uppercase;}
+.mainLeft .typebox ul{ overflow:hidden;background: #fff;padding: 10px;margin-top: 20px; margin-bottom:10px}
+.mainLeft .typebox ul li{ height:45px; line-height:45px;border-bottom:1px dashed #ddd;}
+.mainLeft .typebox ul li a{font-size: 18px;color: #333; padding-left:15px}
+.mainLeft .typebox ul li a:hover{color: #ffae00;}
+
+.mainLeft .newsbox{margin-top: 20px;padding: 15px; background: #fff;}
+.mainLeft .newsbox .titbox{ margin-bottom: 10px; height:20px; overflow:hidden}
+.mainLeft .newsbox .titbox p{ font-size: 20px;padding-left: 15px;border-left: 4px solid #256527;float:left; max-width:150px; line-height:1}
+.mainLeft .newsbox .titbox a{ float:right;font-size: 14px;line-height: 20px;color: #999;}
+.mainLeft .newsbox ul{ overflow:hidden; padding-bottom:10px}
+.mainLeft .newsbox ul li{border-bottom: 1px dotted #ddd; height:36px; line-height:36px;}
+.mainLeft .newsbox ul li a{color: #333;}
+.mainLeft .newsbox .lxwmbox{ line-height:30px; padding-top:15px;}
+
+.mainRight{ width:840px; padding:20px; overflow:hidden; float:right; background:#fff}
+.brandnavbox{padding-bottom: 15px; height:20px;margin-bottom: 15px;border-bottom: 1px solid #eee;line-height: 1;}
+.brandnavbox p.ccsl{font-size: 18px;padding-left: 15px;border-left: 4px solid #256527;color: #256527; float:left; max-width:250px;}
+.brandnavbox .con{ float:right; max-width:250px; height:20px; overflow:hidden}
+
+
+ul.piclistul{ overflow:hidden}
+ul.piclistul li{padding:4px;width:258px;margin-bottom:20px;background:#fff;border:1px solid #ddd;border-radius:4px;float:left; margin-right:18px}
+ul.piclistul li .proimg{width:258px; height:168px; overflow:hidden;}
+ul.piclistul li .proimg img{ width:258px; height:168px; overflow:hidden; display:block;transition: all 0.5s;}
+ul.piclistul li p{padding: 9px;color: #333;}
+ul.piclistul li:nth-child(3n){ margin-right:0}
+ul.piclistul li .proimg img:hover{transform: scale(1.2);}
+
+ul.listul{ overflow:hidden}
+ul.listul li{margin-bottom: 20px;padding-bottom: 20px;border-bottom: 1px solid #ddd; height:170px; overflow:hidden}
+ul.listul li .newsl{width:260px; height:165px; overflow:hidden; float:left}
+ul.listul li .newsl img{ display:block; width:260px; height:165px; overflow:hidden}
+ul.listul li .newsr{ float:right; width:550px;}
+ul.listul li .newsr a.ccsl{color: #256527;font-size: 18px;}
+ul.listul li .newsr hr{border-top: 1px solid #ddd; width:32px;margin: 15px 0;}
+ul.listul li .newsr .sub{line-height: 1.8;color: #666;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient: vertical;}
+ul.listul li .newsr .more{color:#ffae00;display: inline-block;margin-top: 20px;}
+
+
+.detailbox{overflow:hidden}
+.detailbox .xq{}
+.detailbox .xq h1{font-size: 24px; text-align:center;margin: 20px 0;}
+.detailbox .xq .date{color: #999;background: #eee;padding: 8px 0;text-align: center;margin-bottom: 20px;font-size: 14px;}
+.detailbox .xq .con{ font-size:14px; color:#333;line-height: 2; padding-bottom:40px}
+.detailbox .xq .pprooimg{ display:block; margin:0 auto; max-width:600px; margin-bottom:20px}
+.detailbox .xq .con p{ text-indent:2em}
+
+
+.pagebox{ text-align:center; padding-top:30px; padding-bottom:50px}
+.pagebox a{ border:1px solid #ccc; padding:5px 10px; display:inline-block; color:#333; margin:3px}
+.pagebox a:hover{background:#256527; color:#fff}
+.pagebox a.on{ background:#256527; color:#fff}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

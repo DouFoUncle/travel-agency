@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="priv.project.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="priv.project.pojo.Comment">
+    <!--@mbg.generated-->
+    <!--@Table t_comment-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="comment_id" jdbcType="INTEGER" property="commentId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <association property="user" javaType="priv.project.pojo.User">
+      <!--@mbg.generated-->
+      <!--@Table t_user-->
+      <id column="user_id" jdbcType="INTEGER" property="id" />
+      <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+      <result column="user_name" jdbcType="VARCHAR" property="userName" />
+      <result column="password" jdbcType="VARCHAR" property="password" />
+      <result column="age" jdbcType="INTEGER" property="age" />
+      <result column="sex" jdbcType="VARCHAR" property="sex" />
+      <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+      <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+      <result column="birthday" jdbcType="DATE" property="birthday" />
+      <result column="tuCreateDate" jdbcType="TIMESTAMP" property="createDate" />
+    </association>
+    <association property="strategy" javaType="priv.project.pojo.Strategy">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="title" jdbcType="VARCHAR" property="title" />
+      <result column="index_img" jdbcType="VARCHAR" property="indexImg" />
+      <result column="tsContent" jdbcType="LONGVARCHAR" property="content" />
+      <result column="tsCreateDate" jdbcType="VARCHAR" property="createDate" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, comment_id, content, create_date
+  </sql>
+
+  <select id="getListByPage" resultMap="BaseResultMap">
+    SELECT tc.id, tc.user_id, tc.strategy_id, tc.comment_id, tc.content, tc.create_date,
+           tu.login_name, tu.user_name, tu.password, tu.age, tu.sex,
+           tu.head_img, tu.id_card, tu.birthday, tu.create_date tuCreateDate,
+           ts.title, ts.index_img, ts.content tsContent, ts.create_date tsCreateDate
+    FROM t_comment tc
+    INNER JOIN t_user tu on tc.user_id = tu.id
+    INNER JOIN t_strategy ts on tc.strategy_id = ts.id
+    <where>
+      <if test="comment != null and comment.user != null">
+        <if test="comment.user.userName != null and comment.user.userName != ''">
+          AND tu.user_name LIKE CONCAT('%', #{comment.user.userName}, '%')
+        </if>
+      </if>
+      <if test="comment != null and comment.strategy != null">
+        <if test="comment.strategy.title != null and comment.strategy.title != ''">
+          AND ts.title LIKE CONCAT('%', #{comment.strategy.title}, '%')
+        </if>
+      </if>
+      <if test="comment.userId != null">
+        AND tc.user_id = #{comment.userId}
+      </if>
+    </where>
+  </select>
+
+  <select id="getDataCount" resultType="long">
+    SELECT COUNT(1)
+    FROM t_comment tc
+    INNER JOIN t_user tu on tc.user_id = tu.id
+    INNER JOIN t_strategy ts on tc.strategy_id = ts.id
+    <where>
+      <if test="comment != null and comment.user != null">
+        <if test="comment.user.userName != null and comment.user.userName != ''">
+          AND tu.user_name LIKE CONCAT('%', #{comment.user.userName}, '%')
+        </if>
+      </if>
+      <if test="comment != null and comment.strategy != null">
+        <if test="comment.strategy.title != null and comment.strategy.title != ''">
+          AND ts.title LIKE CONCAT('%', #{comment.strategy.title}, '%')
+        </if>
+      </if>
+      <if test="comment.userId != null">
+        AND tc.user_id = #{comment.userId}
+      </if>
+    </where>
+  </select>
+
+  <select id="getListByCommentId" resultMap="BaseResultMap">
+    SELECT tc.id, tc.user_id, tc.strategy_id, tc.comment_id, tc.content, tc.create_date,
+    tu.login_name, tu.user_name, tu.password, tu.age, tu.sex,
+    tu.head_img, tu.id_card, tu.birthday, tu.create_date tuCreateDate
+    FROM t_comment tc
+    INNER JOIN t_user tu on tc.user_id = tu.id
+    WHERE tc.comment_id = #{id}
+  </select>
+</mapper>

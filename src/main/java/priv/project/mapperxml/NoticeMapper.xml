@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="priv.project.mapper.NoticeMapper">
+  <resultMap id="BaseResultMap" type="priv.project.pojo.Notice">
+    <!--@mbg.generated-->
+    <!--@Table t_notice-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="strategy_id" jdbcType="INTEGER" property="strategyId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, create_date, strategy_id
+  </sql>
+</mapper>

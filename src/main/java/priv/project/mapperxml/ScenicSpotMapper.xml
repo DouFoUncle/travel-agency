@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="priv.project.mapper.ScenicSpotMapper">
+  <resultMap id="BaseResultMap" type="priv.project.pojo.ScenicSpot">
+    <!--@mbg.generated-->
+    <!--@Table t_scenic_spot-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="readme" jdbcType="VARCHAR" property="readme" />
+    <result column="business_start_date" jdbcType="VARCHAR" property="businessStartDate" />
+    <result column="business_end_date" jdbcType="VARCHAR" property="businessEndDate" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="skip_url" jdbcType="VARCHAR" property="skipUrl" />
+    <result column="search_keyword" jdbcType="VARCHAR" property="searchKeyword" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="is_red" jdbcType="VARCHAR" property="isRed" />
+    <result column="is_index" jdbcType="VARCHAR" property="isIndex" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+    <association property="scenicType" javaType="priv.project.pojo.ScenicType">
+      <id column="type_id" jdbcType="INTEGER" property="id" />
+      <id column="type_name" jdbcType="VARCHAR" property="typeName" />
+    </association>
+    <association property="area" javaType="priv.project.pojo.Area">
+      <id column="area_id" jdbcType="INTEGER" property="id" />
+      <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+      <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+      <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+      <result column="is_parent" jdbcType="VARCHAR" property="isParent" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    tss.id, tss.type_id, tss.area_id, tss.`name`, tss.`readme`,
+    tss.business_start_date, tss.business_end_date, tss.price,
+    tss.skip_url, tss.search_keyword, tss.create_date, tss.is_red,
+    tss.head_img, tss.is_index
+  </sql>
+
+  <select id="getListByPage" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List" />,
+           ta.province_id, ta.area_name, ta.create_date, ta.is_parent,
+           tst.type_name
+    FROM t_scenic_spot tss
+    INNER JOIN t_area ta on tss.area_id = ta.id
+    INNER JOIN t_scenic_type tst on tss.type_id = tst.id
+    <where>
+      <if test="scenicSpot != null">
+        <if test="scenicSpot.scenicType != null">
+          <if test="scenicSpot.scenicType.typeName != null and scenicSpot.scenicType.typeName != ''">
+            AND tst.type_name LIKE CONCAT('%', #{scenicSpot.scenicType.typeName}, '%')
+          </if>
+        </if>
+        <if test="scenicSpot.name != null and scenicSpot.name != ''">
+          AND tss.name LIKE CONCAT('%', #{scenicSpot.name}, '%')
+        </if>
+        <if test="scenicSpot.typeId != null and scenicSpot.typeId != ''">
+          AND tss.type_id = #{scenicSpot.typeId}
+        </if>
+        <if test="scenicSpot.areaId != null and scenicSpot.areaId != ''">
+          AND (tss.area_id = #{scenicSpot.areaId} OR ta.province_id = #{scenicSpot.areaId})
+        </if>
+      </if>
+    </where>
+    ORDER BY tss.create_date DESC
+    LIMIT #{start}, #{end}
+  </select>
+
+
+  <select id="getDataCount" resultType="long">
+    SELECT COUNT(1)
+    FROM t_scenic_spot tss
+    INNER JOIN t_area ta on tss.area_id = ta.id
+    INNER JOIN t_scenic_type tst on tss.type_id = tst.id
+    <where>
+      <if test="scenicSpot != null">
+        <if test="scenicSpot.scenicType != null">
+          <if test="scenicSpot.scenicType.typeName != null and scenicSpot.scenicType.typeName != ''">
+            AND tst.type_name LIKE CONCAT('%', #{scenicSpot.scenicType.typeName}, '%')
+          </if>
+        </if>
+        <if test="scenicSpot.name != null and scenicSpot.name != ''">
+          AND tst.type_name LIKE CONCAT('%', #{scenicSpot.name}, '%')
+        </if>
+        <if test="scenicSpot.typeId != null and scenicSpot.typeId != ''">
+          AND tss.type_id = #{scenicSpot.typeId}
+        </if>
+        <if test="scenicSpot.areaId != null and scenicSpot.areaId != ''">
+          AND (tss.area_id = #{scenicSpot.areaId} OR ta.province_id = #{scenicSpot.areaId})
+        </if>
+      </if>
+    </where>
+    ORDER BY tss.create_date DESC
+  </select>
+</mapper>
