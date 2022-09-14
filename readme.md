@@ -9,6 +9,18 @@
 整体架构采用：Spring + SpringMVC + MyBatisPlus + MySQL数据库
 ```
 
+
+
+<br/>
+
+#### 仓库代码为压缩版
+
+#### 项目非免费开源，适用于毕业设计，需要请加Q：943701114，非诚勿扰
+
+<br/>
+
+
+
 #### 项目设计为B/S结构，
 
 网站包括：网站前端和网站后台。
@@ -22,12 +34,6 @@
 #### 系统技术栈
 
 Spring + SpringMVC + MyBatisPlus + JSP + Layui + jQuery + JavaScript +  MySQL 
-
-
-
-#### 仓库代码为压缩版
-
-#### 项目非免费开源，适用于毕业设计，需要请加Q：943701114，非诚勿扰
 
 
 
