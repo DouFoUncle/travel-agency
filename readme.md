@@ -47,18 +47,18 @@ https://www.bilibili.com/video/BV1s3411G7XY/
 
 ##### 前台用户端截图
 
-| <img src="img/web_1.jpg" style="zoom:33%;" /> | <img src="img/web_2.jpg" style="zoom:33%;" /> |
-| --------------------------------------------- | --------------------------------------------- |
-| <img src="img/web_3.jpg" style="zoom:33%;" /> | <img src="img/web_4.jpg" style="zoom:33%;" /> |
-| <img src="img/web_5.jpg" style="zoom:33%;" /> | <img src="img/web_6.jpg" style="zoom:33%;" /> |
+| [![pSkaWHs.png](https://s1.ax1x.com/2023/01/05/pSkaWHs.png)](https://imgse.com/i/pSkaWHs) | [![pSkaRBj.png](https://s1.ax1x.com/2023/01/05/pSkaRBj.png)](https://imgse.com/i/pSkaRBj) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [![pSka2uQ.png](https://s1.ax1x.com/2023/01/05/pSka2uQ.png)](https://imgse.com/i/pSka2uQ) | [![pSkay38.png](https://s1.ax1x.com/2023/01/05/pSkay38.png)](https://imgse.com/i/pSkay38) |
+| [![pSka6gS.png](https://s1.ax1x.com/2023/01/05/pSka6gS.png)](https://imgse.com/i/pSka6gS) | [![pSkacjg.png](https://s1.ax1x.com/2023/01/05/pSkacjg.png)](https://imgse.com/i/pSkacjg) |
 
 
 
 ##### 后台管理系统截图
 
-| <img src="img/admin_1.jpg" style="zoom:33%;" /> | <img src="img/admin_2.jpg" style="zoom:33%;" /> |
-| ----------------------------------------------- | ----------------------------------------------- |
-| <img src="img/admin_3.jpg" style="zoom:33%;" /> | <img src="img/admin_4.jpg" style="zoom:33%;" /> |
+| [![pSkas9f.png](https://s1.ax1x.com/2023/01/05/pSkas9f.png)](https://imgse.com/i/pSkas9f) | [![pSka0AI.png](https://s1.ax1x.com/2023/01/05/pSka0AI.png)](https://imgse.com/i/pSka0AI) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [![pSkaD4P.png](https://s1.ax1x.com/2023/01/05/pSkaD4P.png)](https://imgse.com/i/pSkaD4P) | [![pSkaBNt.png](https://s1.ax1x.com/2023/01/05/pSkaBNt.png)](https://imgse.com/i/pSkaBNt) |
 
 
 
